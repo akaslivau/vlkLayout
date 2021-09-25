@@ -31,6 +31,21 @@ a {
   --main-color-two: #FFD977;
 }
 
+#background-image {
+  background-image: url('../img/background.png'); /* Путь к фоновому изображению */
+  width: 100%;
+  top: 100px;
+  left: 0;
+  height:100%;
+  opacity: 0.03;
+  position: fixed;
+  background-repeat: repeat-y;
+  background-size: 100% auto;
+  padding: 0;
+  margin: 0;
+  z-index:0;
+}
+
 /* header */
 
 .main-header{
@@ -40,6 +55,7 @@ a {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  z-index: 1;
 
   background: radial-gradient(174% 38467.2% at 8.88% -25%, var(--main-color) 0%, var(--main-color-two) 100%);
 }
@@ -105,6 +121,7 @@ a {
   justify-content: center;
   align-items: stretch;
   flex-grow: 1;
+  z-index: 1;
 }
 
 .main-info{
