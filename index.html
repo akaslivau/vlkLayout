@@ -15,52 +15,55 @@
 <body>
 <header class="main-header">
   <div class="container">
-    <div class="logo">
+    <div class="frame">
+      <span class="helper"></span>
       <a href="/">
         <img src="img\icons\logo.svg" alt="Логотип"/>
       </a>
     </div>
     <ul class="main-nav">
-      <li class="index-li"><a href="index.html">Главная</a></li>
-      <li><a href="index.html">Мои карты</a></li>
-      <li><a href="index.html">Повторные испытания</a></li>
-      <li><a href="index.html">Настройки</a></li>
-      <li><a href="index.html">О сервисе</a></li>
+      <li class="main-nav-item"><a class="nav-item-link" href="index.html">Главная</a></li>
+      <li class="main-nav-item"><a class="nav-item-link" href="index.html">Мои карты</a></li>
+      <li class="main-nav-item"><a class="nav-item-link" href="index.html">Повторные испытания</a></li>
+      <li class="main-nav-item"><a class="nav-item-link" href="index.html">Настройки</a></li>
+      <li class="main-nav-item"><a class="nav-item-link" href="index.html">О сервисе</a></li>
     </ul>
     <div class="login">
       <h2><a href="login.html">Войти</a></h2>
+      <!--    </div>-->
     </div>
 </header>
 
 <main class="main">
-  <div class="container">
-    <section class="info-section">
-      <h1 class="main-text-header">Облачные инструменты для проведения ВЛК</h1>
-      <ul class="main-text-feature">
-        <li>Строй контрольные карты</li>
-        <li>Обрабатывай повторные испытания</li>
-        <li>Экспорт в Excel, Word, PDF</li>
-        <li>Автозаполнение по расписанию</li>
-        <li>Бесплатная процедура ВЛК</li>
-        <li>Более 10 различных примеров</li>
-      </ul>
-      <a class="button-accent bottomed" href="../details.html">Подробнее</a>
-    </section>
-    <section class="cart-images">
-      <img class="main-img-2" src="img\cart2.png" alt="Контрольная карта ВЛК №2">
-      <img class="main-img-1" src="img\cart1.png" alt="Контрольная карта ВЛК №1">
-    </section>
-  </div>
+  <section class="main-info">
+    <h1 class="main-text-header">Облачные инструменты для проведения ВЛК</h1>
+    <ul class="main-text-feature">
+      <li>Строй контрольные карты</li>
+      <li>Обрабатывай повторные испытания</li>
+      <li>Экспорт в Excel, Word, PDF</li>
+      <li>Автозаполнение по расписанию</li>
+      <li>Бесплатная процедура ВЛК</li>
+      <li>Более 10 различных примеров</li>
+    </ul>
+    <div class="center  margin-top-100">
+      <button class="btn  btn-fixed-260px" type="button">Подробнее</button>
+    </div>
 
-  <div class="quick-card">
-    <h3>...или изучи реальные примеры за 5 минут</h3>
-    <div class="container">
-      <ul>
-        <li><a href="index.html">Создать карту</a></li>
-        <li><a href="index.html">Повторные испытания</a></li>
+    <div class="main-fast-examples">
+      <div class="center">
+        <h3>...или изучи быстрые примеры за 5 минут</h3>
+      </div>
+      <ul class="main-fast-example-list">
+        <li><a class="btn  btn-fixed-260px btn-left" href="index.html">Создать карту</a></li>
+        <li><a class="btn  btn-fixed-260px btn-right" href="index.html">Повторные испытания</a></li>
       </ul>
     </div>
-  </div>
+  </section>
+
+  <section class="main-card-images">
+    <img class="main-card  mc-pos1" src="img\cart1.png" alt="Контрольная карта ВЛК №1">
+    <img class="main-card  mc-pos2" src="img\cart2.png" alt="Контрольная карта ВЛК №2">
+  </section>
 </main>
 </body>
 </html>
