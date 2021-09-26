@@ -1,3 +1,19 @@
+
+@keyframes bounce {
+  0% {transform: translateY(-1000px);}
+  70% {transform: translateY(30px);}
+  90% {transform: translateY(-10px);}
+  100% {transform: translateY(0);}
+}
+
+@keyframes shake {
+  0%, 100% {transform: translateX(0);}
+  10%, 30%, 50%, 70%, 90% {transform: translateX(-10px);}
+  20%, 40%, 60%, 80% {transform: translateX(10px);}
+}
+
+
+
 html, body {
   margin: 0;
   padding: 0;
@@ -30,6 +46,18 @@ a {
   --main-color: #ffc632;
   --main-color-two: #FFD977;
 }
+
+.visually-hidden {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+}
+
 
 #background-image {
   background-image: url('../img/background.png'); /* Путь к фоновому изображению */
@@ -260,3 +288,237 @@ btn-left{
   background: rgb(0, 0, 0);
 }
 
+/* Стили полей форм */
+
+.form-field-group {
+  position: relative;
+}
+
+.form-field {
+  box-sizing: border-box;
+  padding: 7px 15px;
+  font: inherit;
+  text-transform: inherit;
+  color: inherit;
+  border: 2px solid rgb(0, 0, 0);
+  background: rgb(248, 245, 242);
+}
+.form-field:focus {
+  outline: 0;
+  border: 2px solid rgb(102, 61, 21);
+}
+.form-field:placeholder-shown + .form-field-label {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+}
+
+.form-field:focus + .form-field-label {
+  color: rgb(102, 61, 21);
+}
+
+.form-field-label {
+  position: absolute;
+  top: -10px;  left: 15px;
+  display: block;
+  padding: 0 2px;
+  font-size: 12px;
+  background: rgb(248, 245, 242);
+}
+
+.form-field-invalid {
+  border-color: rgb(200, 0, 0);
+}
+.form-field-invalid:focus {
+  border-color: rgb(200, 0, 0);
+}
+
+
+.checkbox-field,
+.radio-btn-field {
+  position: relative;
+  padding-left: 30px;
+  cursor: pointer;
+}
+.checkbox-field:hover,
+.radio-btn-field:hover {
+  color: rgb(102, 61, 21);
+}
+.checkbox-field:active,
+.radio-btn-field:hover {
+  color: rgba(102, 61, 21, 0.3);
+}
+
+.custom-checkbox + .checkbox-replacer {
+  position: absolute; top: -1px; left: 0;
+  box-sizing: border-box;
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgb(0, 0, 0);
+}
+.custom-checkbox:focus + .checkbox-replacer {
+  border-color: rgb(102, 61, 21);
+}
+.custom-checkbox:checked + .checkbox-replacer::before,
+.custom-checkbox:checked + .checkbox-replacer::after {
+  content: "";
+  position: absolute;
+  top: 7px;  left: 0px;
+  width: 15px;
+  height: 2px;
+  background: rgb(0, 0, 0);
+}
+.custom-checkbox:checked + .checkbox-replacer::before {
+  transform: rotate(45deg);
+}
+.custom-checkbox:checked + .checkbox-replacer::after {
+  transform: rotate(-45deg);
+}
+
+
+.custom-radio-btn + .radio-replacer {
+  position: absolute;
+  top: 1px;  left: 0;
+  box-sizing: border-box;
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgb(0, 0, 0); border-radius: 50%;
+}
+.custom-radio-btn:focus + .radio-replacer {
+  border-color: rgb(102, 61, 21);
+}
+.custom-radio-btn:checked + .radio-replacer::after {
+  content: "";
+  position: absolute;
+  top: 4px;  left: 4px;
+  width: 8px;
+  height: 8px;
+  background: rgb(0, 0, 0);
+  border-radius: 50%;
+}
+
+/* Стили modal- */
+
+.modal-overlay {
+  display: none;
+  position: fixed;
+  top: 0;  left: 0;
+  z-index: 100;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.modal-overlay-show {
+  display: block;
+}
+
+.modal-content-close {
+  position: absolute;
+  top: -5px; right: -30px;
+  z-index: 200;
+  width: 25px;
+  height: 25px;
+  font-size: 0;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+}
+.modal-content-close::before,
+.modal-content-close::after {
+  content: "";
+  position: absolute;
+  top: 10px;  left: 2px;
+  width: 22px;
+  height: 4px;
+  background: rgb(208, 208, 208);
+}
+.modal-content-close::before {
+  transform: rotate(45deg);
+}
+.modal-content-close::after {
+  transform: rotate(-45deg);
+}
+
+.modal-content-form {
+  display: none;
+  position: absolute;
+  top: 120px;  left: 50%;
+  z-index: 200;
+  width: 300px;
+  padding: 60px 80px;
+  margin-left: -230px;
+  color: rgb(0, 0, 0);
+  background: rgb(248, 245, 242);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
+}
+
+.modal-content-form-show {
+  display: block;
+  animation: bounce 0.6s;
+}
+
+.modal-content-form-error {
+  animation: shake 0.6s;
+}
+
+.modal-content-form p {
+  padding: 0;
+  margin: 0 0 14px;
+}
+.modal-content-form p:last-of-type {
+  margin-bottom: 0;
+}
+
+.login-form .login-field,
+.login-form .password-field {
+  width: 300px;
+  padding-right: 40px;
+  margin-bottom: 14px;
+}
+
+.login-form .login-field {
+  background-position: 252px -50px;
+}
+
+.login-form .password-field {
+  background-position: 252px -96px;
+}
+
+.restore-link,
+.sign-up-link {
+  float: right;
+  text-decoration: underline;
+}
+.restore-link:hover,
+.sign-up-link:hover {
+  color: rgb(102, 61, 21);
+}
+.restore-link:active,
+.sign-up-link:active {
+  color: rgba(102, 61, 21, 0.3);
+}
+
+
+.login-form .btn {
+  width: 300px;
+  padding: 10px 0;
+  margin: 14px 0;
+}
+
+
+/* login-page */
+
+.login-content {
+  width: 300px;
+  margin: 0 auto;
+}
+
+.login-content p:last-of-type {
+  margin-bottom: 0;
+}

@@ -3,6 +3,7 @@
 
 <head>
   <meta charset="utf-8">
+
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/main.css">
 
@@ -31,7 +32,7 @@
       <li class="main-nav-item"><a class="nav-item-link" href="index.html">О сервисе</a></li>
     </ul>
     <div class="login">
-      <h2><a href="login.html">Войти</a></h2>
+      <h2><a class="login-btn" href="login.html">Войти</a></h2>
       <!--    </div>-->
     </div>
 </header>
@@ -67,5 +68,38 @@
     <img class="main-card  mc-pos2" src="img\cart2.png" alt="Контрольная карта ВЛК №2">
   </section>
 </main>
+
+<div class="modal-overlay"></div>
+
+<div class="modal-content-form">
+  <h1 class="inner-title">Личный кабинет</h1>
+  <form class="login-form" action="index.html" method="post">
+    <div class="form-field-group">
+      <input id="login-field" class="login-field  login-form-field  form-field" type="text" name="login"
+             placeholder="Логин">
+      <label for="login-field" class="form-field-label">Логин</label>
+    </div>
+
+    <div class="form-field-group">
+      <input id="password-field" class="password-field  login-form-field  form-field" type="password" name="password"
+             placeholder="Пароль">
+      <label for="password-field" class="form-field-label">Пароль</label>
+    </div>
+
+    <label class="checkbox-field">
+      <input class="custom-checkbox  visually-hidden" type="checkbox" name="remember" checked>
+      <span class="checkbox-replacer"></span>
+      Запомнить меня
+    </label>
+
+    <button class="btn" type="submit">Войти</button>
+  </form>
+  <br/>
+  <a class="sign-up-link" href="#">Регистрация</a>
+  <br/>
+  <a class="restore-link" href="#">Напомнить пароль</a>
+</div>
+
+<script type="text/javascript" src="js/main.js"></script>
 </body>
 </html>
